@@ -21,7 +21,7 @@ const awardsImages = [
 const AwardsSlider = () => {
   const settings = {
     mobileFirst: true,   // 🔥 important
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 600,
     slidesToShow: 1,     // Default = Mobile (1 image)
