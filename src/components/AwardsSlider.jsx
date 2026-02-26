@@ -20,32 +20,30 @@ const awardsImages = [
 
 const AwardsSlider = () => {
   const settings = {
-    mobileFirst: true,   // 🔥 important
-    dots: false,
-    infinite: true,
-    speed: 600,
-    slidesToShow: 1,     // Default = Mobile (1 image)
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2500,
-    arrows: false,
+  dots: false,
+  infinite: true,
+  speed: 600,
+  slidesToShow: 4, // ✅ Default = Desktop
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2500,
+  arrows: false,
 
-    responsive: [
-      {
-        breakpoint: 640,   // Tablet
-        settings: {
-          slidesToShow: 2,
-        },
+  responsive: [
+    {
+      breakpoint: 1024, // below 1024px
+      settings: {
+        slidesToShow: 2,
       },
-      {
-        breakpoint: 1024,  // Desktop
-        settings: {
-          slidesToShow: 4,
-        },
+    },
+    {
+      breakpoint: 640, // below 640px
+      settings: {
+        slidesToShow: 1,
       },
-    ],
-  };
-
+    },
+  ],
+};
   return (
     <section className="py-12 md:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
