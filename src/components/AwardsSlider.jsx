@@ -20,7 +20,7 @@ const awardsImages = [
 
 const AwardsSlider = () => {
   const settings = {
-    dots: false,
+    dots: true, // mobile me better UX
     infinite: true,
     speed: 600,
     slidesToShow: 4,
@@ -45,30 +45,35 @@ const AwardsSlider = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-12 md:py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
         
         {/* Heading */}
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+        <div className="text-center mb-10 md:mb-14">
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-800">
             Awards & Achievements
           </h2>
-          <div className="w-20 h-1 bg-red-600 mx-auto mt-4 rounded-full"></div>
+          <div className="w-16 md:w-20 h-1 bg-red-600 mx-auto mt-3 md:mt-4 rounded-full"></div>
         </div>
 
         {/* Slider */}
         <Slider {...settings}>
           {awardsImages.map((img, index) => (
-            <div key={index} className="px-3">
+            <div key={index} className="px-2 md:px-3">
               
-              <div className="bg-white rounded-xl p-6 h-[320px] flex items-center justify-center
+              <div className="bg-white rounded-xl 
+                              p-4 md:p-6 
+                              h-[220px] sm:h-[260px] md:h-[320px]
+                              flex items-center justify-center
                               shadow-sm hover:shadow-lg
                               transition-all duration-300">
                 
                 <img
                   src={img}
                   alt={`Award ${index + 1}`}
-                  className="max-h-full object-contain transition-transform duration-500 hover:scale-105"
+                  className="max-h-full object-contain 
+                             transition-transform duration-500 
+                             hover:scale-105"
                 />
 
               </div>
